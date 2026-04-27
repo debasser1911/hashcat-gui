@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { TerminalPanel } from "./components/TerminalPanel";
 import { SettingsPanel } from "./components/SettingsPanel";
+import { TerminalPanel } from "./components/TerminalPanel";
 import Versions from "./components/Versions";
 
 function App(): React.JSX.Element {

@@ -3,11 +3,12 @@
 	"version": "1.0.0",
 	"description": "Hashcat GUI",
 	"main": "./out/main/index.js",
-	"author": "Andrii Istomin",
+	"author": "debasser1911",
 	"scripts": {
 		"format": "biome check --write",
 		"format:unsafe": "biome check --write --unsafe",
 		"lint": "biome check",
+		"test": "vitest",
 		"typecheck:node": "tsc --noEmit -p tsconfig.node.json --composite false",
 		"typecheck:web": "tsc --noEmit -p tsconfig.web.json --composite false",
 		"typecheck": "npm run typecheck:node && npm run typecheck:web",
@@ -27,6 +28,9 @@
 	"devDependencies": {
 		"@biomejs/biome": "2.4.13",
 		"@electron-toolkit/tsconfig": "^2.0.0",
+		"@testing-library/dom": "^10.4.1",
+		"@testing-library/jest-dom": "^6.9.1",
+		"@testing-library/react": "^16.3.2",
 		"@types/node": "^22.19.1",
 		"@types/react": "^19.2.7",
 		"@types/react-dom": "^19.2.3",
@@ -34,9 +38,11 @@
 		"electron": "^39.2.6",
 		"electron-builder": "^26.0.12",
 		"electron-vite": "^5.0.0",
+		"jsdom": "^29.1.0",
 		"react": "^19.2.1",
 		"react-dom": "^19.2.1",
 		"typescript": "^5.9.3",
-		"vite": "^7.2.6"
+		"vite": "^7.2.6",
+		"vitest": "^4.1.5"
 	}
 }

@@ -52,7 +52,7 @@ export const TerminalPanel = ({
 					consoleOutput.map((line) => <LogLine key={line} text={line} />)
 				)}
 			</div>
-			
+
 			<div className="console-actions">
 				<div className="action-buttons-group">
 					<button className="btn-outline" onClick={clearConsole} type="button">

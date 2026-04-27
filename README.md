@@ -57,5 +57,5 @@ npm run build:linux
 ```
 
 ## Copyright & License
-&copy; Hashcat GUI Open Source Project. Created by Andrii Istomin.
+&copy; Hashcat GUI Open Source Project. Created by debasser1911.
 This project is an independent GUI wrapper and is not officially affiliated with the core Hashcat project.

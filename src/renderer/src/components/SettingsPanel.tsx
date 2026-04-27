@@ -45,7 +45,14 @@ export const SettingsPanel = ({
 }: SettingsPanelProps) => {
 	return (
 		<div className="panel settings-panel">
-			<div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "8px" }}>
+			<div
+				style={{
+					display: "flex",
+					justifyContent: "space-between",
+					alignItems: "center",
+					marginBottom: "8px",
+				}}
+			>
 				<h2 style={{ margin: 0 }}>Settings</h2>
 				<button type="button" className="btn-clear-text" onClick={onOpenAbout}>
 					About
@@ -96,9 +103,7 @@ export const SettingsPanel = ({
 					<option value="1000">NTLM (1000)</option>
 					<option value="1800">SHA-512 (1800)</option>
 					<option value="2500">WPA/WPA2 .hccapx (2500)</option>
-					<option value="22000">
-						WPA-PBKDF2-PMKID+EAPOL .hc22000 (22000)
-					</option>
+					<option value="22000">WPA-PBKDF2-PMKID+EAPOL .hc22000 (22000)</option>
 					<option value="3200">bcrypt (3200)</option>
 				</select>
 			</div>
