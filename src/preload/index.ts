@@ -12,17 +12,20 @@ const api = {
 	stopHashcat: () => ipcRenderer.invoke("hashcat:stop"),
 	writeHashcat: (input: string) => ipcRenderer.invoke("hashcat:write", input),
 	onHashcatOutput: (callback: (data: string) => void) => {
-		const listener = (_: any, data: string) => callback(data);
+		const listener = (_: Electron.IpcRendererEvent, data: string) =>
+			callback(data);
 		ipcRenderer.on("hashcat:output", listener);
 		return () => ipcRenderer.removeListener("hashcat:output", listener);
 	},
 	onHashcatError: (callback: (data: string) => void) => {
-		const listener = (_: any, data: string) => callback(data);
+		const listener = (_: Electron.IpcRendererEvent, data: string) =>
+			callback(data);
 		ipcRenderer.on("hashcat:error", listener);
 		return () => ipcRenderer.removeListener("hashcat:error", listener);
 	},
 	onHashcatExit: (callback: (code: number | null) => void) => {
-		const listener = (_: any, code: number | null) => callback(code);
+		const listener = (_: Electron.IpcRendererEvent, code: number | null) =>
+			callback(code);
 		ipcRenderer.on("hashcat:exit", listener);
 		return () => ipcRenderer.removeListener("hashcat:exit", listener);
 	},

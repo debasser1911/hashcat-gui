@@ -1,7 +1,7 @@
+import { readdir } from "node:fs/promises";
+import { join } from "node:path";
 import { dialog, ipcMain } from "electron";
-import { readdir } from "fs/promises";
 import * as pty from "node-pty";
-import { join } from "path";
 
 let hashcatProcess: pty.IPty | null = null;
 
@@ -33,7 +33,7 @@ export function setupIPC() {
 						.filter((f) => f.isFile() && f.name.endsWith(".rule"))
 						.map((f) => f.name),
 				);
-			} catch (e) {
+			} catch (_e) {
 				// rules dir might not exist
 			}
 
@@ -47,7 +47,7 @@ export function setupIPC() {
 						.filter((f) => f.isFile() && exts.some((e) => f.name.endsWith(e)))
 						.map((f) => f.name),
 				);
-			} catch (e) {}
+			} catch (_e) {}
 
 			const dictDir = join(dirPath, "dictionaries");
 			try {
@@ -57,7 +57,7 @@ export function setupIPC() {
 						.filter((f) => f.isFile() && exts.some((e) => f.name.endsWith(e)))
 						.map((f) => join("dictionaries", f.name)),
 				);
-			} catch (e) {}
+			} catch (_e) {}
 
 			return { rules, wordlists };
 		} catch (error) {
@@ -72,7 +72,7 @@ export function setupIPC() {
 			if (hashcatProcess) {
 				try {
 					hashcatProcess.kill();
-				} catch (e) {}
+				} catch (_e) {}
 			}
 
 			return new Promise((resolve) => {
@@ -105,7 +105,7 @@ export function setupIPC() {
 		if (hashcatProcess) {
 			try {
 				hashcatProcess.kill();
-			} catch (e) {}
+			} catch (_e) {}
 			hashcatProcess = null;
 			return true;
 		}
@@ -117,7 +117,7 @@ export function setupIPC() {
 			try {
 				hashcatProcess.write(input);
 				return true;
-			} catch (e) {
+			} catch (_e) {
 				return false;
 			}
 		}
