@@ -22,7 +22,7 @@ A modern, interactive, and user-friendly GUI wrapper for the popular Hashcat pas
 ## Development
 
 ### Recommended IDE Setup
-- [VSCode](https://code.visualstudio.com/) + [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) + [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+- [VSCode](https://code.visualstudio.com/) + [Biome](https://biomejs.dev/)
 
 ### Install Dependencies
 Ensure you have Node.js installed, then run:
@@ -30,11 +30,18 @@ Ensure you have Node.js installed, then run:
 npm install
 ```
 
-*(Note: Since this project relies on `node-pty`, native compilation tools like `node-gyp` and Python/C++ build tools may be required depending on your OS)*
-
 ### Start Development Server
 ```bash
 npm run dev
+```
+
+### Code Formatting & Linting (Biome)
+```bash
+# Format and fix code
+npm run format
+
+# Run linter
+npm run lint
 ```
 
 ### Build for Production
